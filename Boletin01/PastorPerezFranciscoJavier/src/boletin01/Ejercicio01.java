@@ -77,6 +77,9 @@ public class Ejercicio01 {
 		
 		int posicioncopia = Arrays.binarySearch(copia, ValorBuscado);
 		
+		// en la matriz original, como no está ordenada, probablemente no
+		//funcione bien la busqueda
+		
 		System.out.println("la posicion en el original es : "+posicion);
 		
 		System.out.println("la posicion en el original es : "+posicioncopia);

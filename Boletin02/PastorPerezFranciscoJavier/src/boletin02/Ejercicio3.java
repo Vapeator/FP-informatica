@@ -16,14 +16,21 @@ public class Ejercicio3 {
 		int numero = 0;
 		int puntos=0 ,puntos2=0, puntos3=0;
 		int intentos = 0;
+		boolean seguirJugando=true;
 		
-		int dificultad = Integer.parseInt(JOptionPane.showInputDialog("Elija el nivel de dificultad de 1 a 3"));
+		
+do {	
+		
+		
+		int dificultad = Integer.parseInt(JOptionPane.showInputDialog("Elija el nivel de dificultad de 1 a 3, utiliza cualquier otro numero para salir"));
+		
+		intentos=0;
 		
 		switch (dificultad) {
 		
 		case 1:
 			
-			int aleatorio= (int)(Math.random()*15);
+			int aleatorio= (int)(Math.random()*15+1);
 			
 			do {
 				
@@ -82,7 +89,7 @@ public class Ejercicio3 {
 		
 		case 2:
 			
-			int aleatorio2= (int)(Math.random()*30);
+			int aleatorio2= (int)(Math.random()*30+1);
 			
 			do {
 				
@@ -144,7 +151,7 @@ public class Ejercicio3 {
 			
 			case 3:
 				
-				int aleatorio3= (int)(Math.random()*50);
+				int aleatorio3= (int)(Math.random()*50+1);
 				
 				do {
 					
@@ -207,20 +214,23 @@ public class Ejercicio3 {
 					System.out.println("No te quedan mas intentos");
 				
 				}
+		
 				break;
 				
 				default:
 					
-					System.out.println("Error en la opcion introducida. Solamente hay 3 niveles de dificultad.");
+					System.out.println("Gracias por jugar!");
 				
+					seguirJugando=false;
 				
-				
+		}
+	}while (seguirJugando==true)	;
 				
 				
 		
 		
 		
 
-	}
+
 	}
 }

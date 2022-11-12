@@ -12,6 +12,7 @@ public class ExtraPalindromo {
 		
 		String frase =JOptionPane.showInputDialog("Escriba su frase:");
 		
+		frase = frase.replace(" ", "");
 		
 		String frase2[] = frase.split("");
 		

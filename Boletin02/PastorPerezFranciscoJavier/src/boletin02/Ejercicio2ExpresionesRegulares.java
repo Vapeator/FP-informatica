@@ -1,20 +1,21 @@
 package boletin02;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
 
-public class Ejercicio2 {
+public class Ejercicio2ExpresionesRegulares {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		String matriz[]= new String[5];
 		
-		int arroba = 0;
-		boolean punto= false; 
+		
 		int posicion=0;		
-	
+		
 		
 		
 		
@@ -23,43 +24,24 @@ public class Ejercicio2 {
 			String mail = JOptionPane.showInputDialog("Introduce un mail");
 			
 			matriz[j]=mail;
+			Pattern pat = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");   
+		     Matcher mat = pat.matcher(mail);
+		       if(mat.find()){
+		          System.out.println("Correo Válido");
+		       }else{
+		          System.out.println("Correo No Válido");
+		          matriz[j]="ERROR";
+		          
+		     }
+
 			
-			arroba=0;
-			punto=false;
-			
-			for (int i=0; i<mail.length();i++) {
-				
-				
-			if(mail.charAt(i)=='@') {
-					 
-					arroba++;
-					}
-				if(mail.charAt(i)=='.' && mail.charAt(mail.length()-1)!='.') {
-					
-					punto=true;
-				}
-							
-			}
-			
-			
-		if (arroba ==1 && punto==true) {
-				
-				System.out.println("El mail es correcto");	
-	
-		} else {
-			
-			System.out.println("La direccion de mail no es correcta");
-		}
-			
-			
-		
 	}
 		
 		System.out.println(Arrays.toString(matriz));	
 		
 //b.
 		
-		System.out.println(matriz[0]);
+		
 		
 		String buscarMail=JOptionPane.showInputDialog("Introduzca el mail a buscar");
 		
@@ -103,7 +85,7 @@ public class Ejercicio2 {
 		
 //d. 
 		
-		System.out.println("afasdasdasd " +matriz.length+" adasdasd"+ contadorGmail);
+		
 		
 		double porcentajeGmail= ((double)contadorGmail/ matriz.length)*100;
 		

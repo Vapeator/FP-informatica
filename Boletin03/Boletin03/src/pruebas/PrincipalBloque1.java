@@ -29,7 +29,7 @@ public class PrincipalBloque1 {
 		int x=28;
 				
 		
-		System.out.println("es perfecto?" + MTDNumeros.esPerfecto(x));
+		System.out.println("es perfecto el nº "+ x+ " ? " + MTDNumeros.esPerfecto(x));
 		
 		break;
 //2.
@@ -175,9 +175,11 @@ public class PrincipalBloque1 {
 //9.
 		case 9:
 			
-		float matriz2D3[][]= {{3,3,3,3},{3,5,3,3},{5,5,5,5},{6,6,6,6}};
+		float matriz2D3[][]= {{3,3,3,3},{3,5,6,3},{3,3,3,3},{5,4,6,5}};
 		
-		MTDNumeros.repes(matriz2D3);
+				
+		System.out.println(MTDNumeros.matriz2DRepetidas(matriz2D3));
+		
 		
 			
 		break;
@@ -189,7 +191,12 @@ public class PrincipalBloque1 {
 			
 			
 			break;
+			
+			default:
+				
+				System.out.println("Error en la opcion introducida");
 		
+				break;
 		}
 		}while(salir==false);
 		

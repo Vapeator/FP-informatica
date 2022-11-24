@@ -43,9 +43,9 @@ public class PrincipalBloque2 {
 
 			case 3:
 
-				String frase = "casas casas casas";
+				String frase = "Este ejercicio ha sido dificilisimo";
 
-				char carac[] = { 'c', 'a' };
+				char carac[] = { 'e', 'd', 'i' };
 
 				System.out.println(MTDCadenas.guiones(frase, carac));
 
@@ -53,8 +53,9 @@ public class PrincipalBloque2 {
 
 			case 4:
 
-				String contraseña = "MonteCastelo1";
-
+				//String contraseña = "MonteCastelo1";
+				String contraseña =JOptionPane.showInputDialog("Introduzca una contraseña");
+				
 				System.out.println("El formato es valido? " + MTDCadenas.formato(contraseña));
 
 				break;
@@ -73,6 +74,12 @@ public class PrincipalBloque2 {
 				salir = true;
 
 				break;
+				
+			default:
+				System.out.println("Error en la opcion introducida");
+				
+				break;
+				
 			}
 
 		} while (salir == false);

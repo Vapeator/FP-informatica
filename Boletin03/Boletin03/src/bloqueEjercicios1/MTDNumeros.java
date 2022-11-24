@@ -87,7 +87,7 @@ public class MTDNumeros {
 			System.out.print("El resultado en Kiloohmnios es: ");
 		}else {
 			
-			System.out.print("Error, las unidades están tienen que ser 1 o 2: ");
+			System.out.print("Error, las unidades tienen que ser 1 o 2: ");
 		}
 		
 		return resultadoOhmios;
@@ -155,15 +155,17 @@ public class MTDNumeros {
 		
 		public static void redondeo (float matriz[], boolean condicion) {
 			
+			float matrizLocal[]= new float[matriz.length];
+			
 			for(int i=0; i<matriz.length;i++) {
 				
 				if(condicion==false) {
 					
-					matriz[i]=(float)Math.ceil(matriz[i]);
+					matrizLocal[i]=(float)Math.ceil(matriz[i]);
 					
 				}else {
 					
-					matriz[i]=(float)Math.floor(matriz[i]);
+					matrizLocal[i]=(float)Math.floor(matriz[i]);
 				}
 				
 			}
@@ -263,24 +265,29 @@ public class MTDNumeros {
 		}
 	
 		public static boolean matriz2DRepetidas(float matriz[][]) {
-
-			int filas = matriz.length;
-			int columnas = matriz[0].length;
-			boolean repetidas = false;
-
-			for (int i = 0; i < filas; i++) {
-				repetidas=false;
-				for (int j = 0; j < columnas; j++) {
-					if (matriz[0][j]==matriz[i][j]) {
-						repetidas = true;
+			Boolean repetidas = false;
+			for (int i = 0; i < matriz.length; i++) { 
+				for (int j = 0; j < matriz[i].length; j++) { 
+					if (j == i) {
+						j++; 
+					}		
+					if (j == matriz.length) { 
+						break;
+					} else {
+						repetidas = Arrays.equals(matriz[j], matriz[i]); // Comparamos si la fila se encuentra repetida.
+						if (repetidas==true) { 
+							
+							return true;
+							
+						}
 					}
-					
 				}
-				
+
 			}
-			
 			return repetidas;
 		}
+
+		
 		
 
 		public static void repes(float[][] matriz) {

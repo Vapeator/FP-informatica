@@ -56,6 +56,15 @@ public class PruebaFestival {
 				
 			case 'b':
 				
+				System.out.println("Introduzca el nombre del grupo");
+				String nombreGrupo= new Scanner(System.in).nextLine();
+				for (Festival f: ) {
+					if(f.getNombre().equals(nombreGrupo)) {
+						System.out.println(nombreGrupo);
+					}
+				}
+				
+				
 				break;
 				
 			case 'c':
